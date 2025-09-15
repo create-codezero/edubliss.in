@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min % to Score in Quiz 2 to get Max CGPA</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div style="height: 100vh; width: 100%; display: flex; justify-content: center; align-items: center;">
+        <div style="display: flex; flex-direction:column; justify-content: center; align-items: center; background-color: #ebebeb; backdrop-filter: blur; border: 2px solid #9f9f9f; border-radius: 10px; padding: 20px; box-shadow: 0px 0px 100px #d7b3573f; max-width: 400px;">
+            <p style="font-weight: 500; text-align: center; margin-bottom: 25px;">Please enter you marks in Percentage without "%" Sign. Ex: if your Overall Qualifier/Quiz1 Score is 85% then enter 85</p>
+            <input type="text" id="q1" style="min-width: 250px; width: 100%; margin-bottom: 10px; border: 2px solid #9f9f9f; padding: 7px 10px; border-radius: 7px;" placeholder="Enter Your Qualifier/Quiz1 Score" required>
+            <input type="text" id="endT" style="min-width: 250px; width: 100%; margin-bottom: 10px; border: 2px solid #9f9f9f; padding: 7px 10px; border-radius: 7px;" placeholder="Enter Your Expected End Term Score" required>
+            <input type="text" id="gaa" style="min-width: 250px; width: 100%; margin-bottom: 10px; border: 2px solid #9f9f9f; padding: 7px 10px; border-radius: 7px;" placeholder="Enter Your Expected GAA Score" required>
+
+            <input type="text" id="q2" style="min-width: 250px; width: 100%; margin-bottom: 10px; border: 2px solid #9f9f9f; padding: 7px 10px; border-radius: 7px;" placeholder="Enter Your Quiz2 Score" required>
+
+            <input type="text" id="wantedCGPA" style="min-width: 250px; width: 100%; margin-bottom: 10px; border: 2px solid #9f9f9f; padding: 7px 10px; border-radius: 7px;" placeholder="Enter Percentage you overall want" required>
+
+            <div id="calculate" onclick="calc()" style="padding: 10px 20px; border-radius: 10px; background-color: #ffb300; font-weight: 600; cursor: pointer;">Calculate</div>
+
+            <p style="font-weight: 500; text-align: center; margin-bottom: 25px;">Developed by: Kya fark Padta hai Use Karo😀</p>
+
+        </div>
+    </div>
+
+
+    <script>
+        function calc(){
+        let q1 = $("#q1").val();
+        let q2 = $("#q2").val();
+        let endT = $("#endT").val();
+        let gaa = $("#gaa").val();
+        let wantedCGPA = $("#wantedCGPA").val();
+        let maxq;
+
+        if(q1 != "" && endT != "" && gaa != ""){
+            let wantedCGPAinTenVal = wantedCGPA/10;
+            let wantedCGPAinTen = wantedCGPAinTenVal.toFixed(1);
+
+            if(q1 > q2){
+                maxq = q1;
+            }else{
+                maxq = q2
+            }
+
+            let firstFminEndTCGPA = wantedCGPA - 0.1*(gaa) - 0.2*(maxq);
+            let secondFminEndTCGPA = wantedCGPA - 0.1*(gaa) - 0.2*(q1) - 0.3*(q2);
+
+            if([0.1*(gaa) + 0.6*(endT) + 0.2*(maxq)] > [0.1*(gaa) + 0.4*(endT) + 0.2*(q1) + 0.3*(q2)]){
+                finalPercentage = [0.1*(gaa) + 0.6*(endT) + 0.2*(maxq)];
+            }else{
+                finalPercentage = [0.1*(gaa) + 0.4*(endT) + 0.2*(q1) + 0.3*(q2)];
+            }
+
+
+
+            alert(`Your Overall Percentage if you get your Expected Marks in End Term(${endT}%):${finalPercentage}\n\n\nHere is the total percentage you need to score in End Term to Get your Expected Overall Percentage(${wantedCGPA}%):\nBy First Formula 0.1(GAA)+0.2(MAX(Qz1,Qz2))+0.6(F): ${((firstFminEndTCGPA*10)/6).toFixed(2)}% in End Term\nBy Second Formula 0.1(GAA)+0.2(Qz1)+0.3(Qz2)+0.4(F): ${((secondFminEndTCGPA*10)/4).toFixed(2)}% in End Term`);
+
+            // if(q2 >= minq2){
+            //     alert(`Your T if you don't give Quiz 2: ${withouT} \n\nMinimum Percentage of Score you need in quiz2 to get T equal to T of without giving Quiz2: ${minq2}\n\nYour T when you give Quiz2 and Score More than ${minq2}--\nIf you get ${(minTens+1)*10} in quiz2, then T will be: ${[0.1*(gaa) + 0.4*(endT) + 0.2*(q1) + 0.3*((minTens+1)*10)]}\n\n\nYour T if you get your Expected Marks in Quiz2: ${[0.1*(gaa) + 0.4*(endT) + 0.2*(q1) + 0.3*(q2)]}\nYou Should Give Quiz2.`);
+            // }else{
+            //     alert(`Your T if you don't give Quiz 2: ${withouT} \n\nMinimum Percentage of Score you need in quiz2 to get T equal to T of without giving Quiz2: ${minq2}\n\nYour T when you give Quiz2 and Score More than ${minq2}--\nIf you get ${(minTens+1)*10} in quiz2, then T will be: ${[0.1*(gaa) + 0.4*(endT) + 0.2*(q1) + 0.3*((minTens+1)*10)]}\n\n\nYour T if you get your Expected Marks in Quiz2: ${[0.1*(gaa) + 0.4*(endT) + 0.2*(q1) + 0.3*(q2)]}\nYou Should Not Give Quiz2 or Try to score more than ${minq2} in Quiz2.`);
+            // }
+
+
+            
+
+        }else{
+            alert("please fill out all the input flieds");
+        }
+
+        }
+    </script>
+</body>
+</html>

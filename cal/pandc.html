@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutation & Combination Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div style="height: 100vh; width: 100%; display: flex; justify-content: center; align-items: center;">
+        <div style="display: flex; flex-direction:column; justify-content: center; align-items: center; background-color: #cfcfcf; backdrop-filter: blur; border-radius: 10px; padding: 20px; box-shadow: 0px 0px 100px #a600ff3f;">
+            <input type="text" id="nValue" placeholder="Enter n">
+            <input type="text" id="rValue" placeholder="Enter r">
+
+            <select name="whatToDo" id="whatToDo">
+                <option value="Combination" selected>Combination</option>
+                <option value="Permutation">Permutation</option>
+            </select>
+
+            <div id="calculate" onclick="calcPandC()">Calculate</div>
+
+        </div>
+    </div>
+
+
+    <script>
+        function calcPandC(){
+        let n = $("#nValue").val();
+        let r = $("#rValue").val();
+
+        let whatToDo = $("#whatToDo").val();
+
+        if(whatToDo == "Permutation"){
+            let nfac = 1;
+            let nsubr = n-r;
+            let nsubrfac = 1;
+
+
+            let i = n;
+            while(i >= 1){
+                nfac = nfac * i;
+
+
+                i--;
+            }
+
+            let j = nsubr;
+            while (j >= 1){
+                nsubrfac = nsubrfac * j;
+
+                j--;
+            }
+
+            let p = Math.round(nfac/(nsubrfac));
+
+            alert(p);
+
+        }else if(whatToDo == "Combination"){
+            let nfac = 1;
+            let reducednfac = 1;
+            let nsubr = n-r;
+            let nsubrfac = 1;
+            let rfac = 1;
+
+
+            // let i = n;
+            // while(i >= 1){
+            //     nfac = nfac * i;
+
+
+            //     i--;
+            // }
+
+            let i = n;
+            while(i > nsubr){
+                reducednfac = reducednfac * i;
+
+
+                i--;
+            }
+
+            // let j = nsubr;
+            // while (j >= 1){
+            //     nsubrfac = nsubrfac * j;
+
+            //     j--;
+            // }
+
+            let k = r;
+            while(k >= 1){
+                rfac = rfac * k;
+
+                k--;
+            }
+
+            // let c = Math.round(nfac/(rfac * nsubrfac));
+            let c = Math.round(reducednfac/rfac);
+
+            alert(c);
+
+        }else{
+            alert("Please Select Permutation or Combination");
+        }
+
+        }
+    </script>
+</body>
+</html>
