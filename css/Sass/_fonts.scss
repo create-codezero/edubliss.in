@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import './variables';
+
+@function font-color($color-name) {
+     @return map-get($map: $fontBg, $key: $color-name);
+}
+
+body {
+     font-family: 'Montserrat',
+          sans-serif;
+     // font-family: 'Poppins',
+     // sans-serif;
+}
+
+.font-poppins {
+     font-family: 'Poppins',
+          sans-serif;
+}
+
+.font-libre-caslone-text {
+     font-family: 'Libre Caslon Text',
+          sans-serif;
+}
+
+.font-bebas {
+     font-family: 'Bebas Neue',
+          cursive;
+}
+
+.heading {
+     font-size: 45px;
+     font-weight: 500;
+     font-family: 'Poppins', sans-serif;
+     margin: 0;
+}
+
+.sub-heading {
+     font-size: 25px;
+     font-weight: 500;
+     margin: 0;
+}
+
+.small-sub-heading {
+     font-size: 20px;
+     font-weight: 500;
+     margin: 0;
+}
+
+.normal-tx {
+     font-size: 16px;
+     font-weight: 500;
+     margin: 0;
+}
+
+@include mobile {
+     .heading {
+          font-size: 35px;
+          font-weight: 600;
+          font-family: 'Poppins', sans-serif;
+          margin: 0;
+     }
+
+     .sub-heading {
+          font-size: 25px;
+          font-weight: 500;
+          margin: 0;
+     }
+
+     .small-sub-heading {
+          font-size: 17px;
+          font-weight: 500;
+          margin: 0;
+     }
+
+     .normal-tx {
+          font-size: 15px;
+          font-weight: 300;
+          margin: 0;
+     }
+
+}
+
+.fc-primary {
+     color: var(--clr-7); 
+}
+
+.fc-secondary {
+     color: var(--clr-8);
+}
+
+.fc-white {
+     color: var(--white);
+}
+
+.fc-black {
+     color: var(--black);
+}
+
+.fc-non-use {
+     color: font-color("non-use");
+}
+
+.fc-red {
+     color: var(--btn-pink-2);
+}
+
+// hover font color
+
+// hover bg 
+
+.hover-fc-dark-blue:hover {
+     color: font-color("dark-blue");
+}
+
+.hover-fc-primary:hover {
+     color: font-color("primary");
+}
+
+.hover-fc-dark-white:hover {
+     color: font-color("dark-white");
+}
+
+.hover-fc-light-dark-blue:hover {
+     color: font-color("light-dark-blue");
+}
+
+.hover-fc-light-green:hover {
+     color: font-color("light-green");
+}
+
+.hover-fc-white:hover {
+     color: font-color("white");
+}
+
+.hover-fc-red:hover {
+     color: font-color("red");
+}
+
+// font sizes
+.fs-10 {
+     font-size: 10px;
+}
+
+.fs-20 {
+     font-size: 20px;
+}
+
+.fs-25 {
+     font-size: 25px;
+}
+
+.fs-30 {
+     font-size: 30px;
+}
+
+.fs-40 {
+     font-size: 40px;
+}
+
+.fs-50 {
+     font-size: 50px;
+
+     @include mobile {
+          font-size: 40px;
+     }
+}
+
+.fs-60 {
+     font-size: 60px;
+}
+
+.fs-70 {
+     font-size: 70px;
+}
+
+.fs-80 {
+     font-size: 80px;
+}
+
+// font weights
+.fw-100 {
+     font-weight: 100;
+}
+
+.fw-200 {
+     font-weight: 200;
+}
+
+.fw-300 {
+     font-weight: 300;
+}
+
+.fw-400 {
+     font-weight: 400;
+}
+
+.fw-500 {
+     font-weight: 500;
+}
+
+.fw-600 {
+     font-weight: 600;
+}
+
+.fw-700 {
+     font-weight: 700;
+}
+
+.fw-800 {
+     font-weight: 800;
+}
+
+.fw-900 {
+     font-weight: 900;
+}
+
+// letter space 
+
+.ls-5 {
+     letter-spacing: 5px;
+}
+
+.ls-10 {
+     letter-spacing: 10px;
+}
+
+.ls-15 {
+     letter-spacing: 15px;
+}
+
+
+.ls-20 {
+     letter-spacing: 20px;
+}
+
+.ls-25 {
+     letter-spacing: 25px;
+}
+
+.ls-30 {
+     letter-spacing: 30px;
+}
+
+.ls-35 {
+     letter-spacing: 35px;
+}
+
+.ls-40 {
+     letter-spacing: 40px;
+}
+
+.ls-45 {
+     letter-spacing: 45px;
+}
+
+.ls-50 {
+     letter-spacing: 50px;
+}

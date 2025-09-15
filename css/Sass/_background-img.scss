@@ -1,0 +1,90 @@
+@import './variables';
+
+#landing {
+     // background-image: url('../../media/Images/Landing_Bg_Without_Illu@2x.png');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+     // @include mobile {
+     //      background-image: url('../../media/Images/Landing_m_Bg_Without_Illu@2x.png');
+     // }
+}
+
+#course {
+     // background-image: url('../../media/Images/Course_Bg_Without_Illu@2x.png');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+     // @include mobile {
+     //      background-image: url('../../media/Images/Course_m_Bg_Without_Illu@2x.png');
+     // }
+}
+
+#assets {
+     // background-image: url('../../media/Images/Landing_Bg_Without_Illu@2x.png');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+     // @include mobile {
+     //      background-image: url('../../media/Images/Landing_m_Bg_Without_Illu@2x.png');
+     // }
+}
+
+.bg-clr-1 {
+     background-color: var(--clr-1);
+}
+
+.bg-clr-4 {
+     background-color: var(--clr-4);
+}
+
+.bg-footer-icon {
+     background-color: var(--clr-5);
+}
+
+.bg-footer-copyright {
+     background-color: var(--clr-1);
+}
+
+// old code
+
+.bg-dark-blue {
+     background-color: map-get($colors, dark-blue);
+}
+
+.bg-white {
+     background-color: map-get($colors, white);
+}
+
+.bg-light-dark-blue {
+     background-color: map-get($colors, light-dark-blue);
+}
+
+.bg-primary {
+     background-color: map-get($colors, primary);
+}
+
+.bg-light-green {
+     background-color: map-get($colors, light-green);
+}
+
+.bg-dark-white {
+     background-color: map-get($colors, dark-white);
+}
+
+.bg-black {
+     background-color: map-get($colors, black);
+}
+
+// hover bg 
+
+// .hover-bg-dark-blue:hover {
+//      background-color: darken(var(--dark-blue), 10%);
+// }
+
+// .hover-bg-primary:hover {
+//      background-color: darken(var(--dark-blue), 10%);
+// }

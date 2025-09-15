@@ -1,0 +1,14 @@
+$("#End").appear();
+
+$("body").on("appear", "#End", function() {
+     const oldHomeScript = document.getElementById('HomePageScript');
+     oldHomeScript.remove();
+
+     $.post('./pages/More-Post.php', {
+               startSrNo: <?php echo ($lastPost + 1); ?>
+          },
+          function(data, status) {
+               $("#loadMorePosts").html(data, function() {
+                    ImforMorePost();
+               });
+          });

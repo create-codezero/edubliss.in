@@ -1,0 +1,70 @@
+<form class="flex flex-d-column" id="writePostForm" method="POST" action="" enctype="multipart/form-data">
+     <div class="input" id="mainWriteBox">
+          <div id="ImageInputContainer">
+               <!-- IMAGE INPUT WILL BE PLACED HERE -->
+               <input type="file" style="display: none;" accept="image/png, image/jpg, image/jpeg" name="postImage" id="Upload-Post-Image" onchange="displayPostImage(this)">
+
+          </div>
+          <textarea name="postText" id="postText" rows="4" placeholder="Write Something .."></textarea>
+
+          <div class="pos-relative none" id="PostImageViewer">
+
+               <img src="" class="img-fluid" alt="Post Image" id="post-image-viewer" onclick="triggerClick('Upload-Post-Image')" title="Click to change the Image" style="cursor:pointer;">
+
+               <div class="flex e-c border-radius-100per overflow-hidden m-10 pos-absolute" style="background-color: #00000020; width: 40px; height:40px; top:0; right:0; z-index:0;" id="Remove-Post-Photo" onclick="removePostImage()">
+                    <i class="fas fa-times fs-20 cursor-pointer"></i>
+               </div>
+
+          </div>
+
+          <div class="pos-relative none" style="background-color: var(--clr-4);" id="WriteRatingPost">
+
+
+               <div id="ratingInputContainer">
+                    <!-- Rating input will be show here -->
+               </div>
+
+               <div class="flex e-c border-radius-100per overflow-hidden m-10 pos-absolute " style="background-color: #00000020; width: 40px; height:40px; top:0; right:0;" id="Remove-Post-Photo" onclick="postRemoveRating('WriteRatingPost')">
+                    <i class="fas fa-times fs-20 cursor-pointer"></i>
+               </div>
+          </div>
+
+          <div class="pos-relative none" style="background-color: var(--clr-4);" id="WritePollPost">
+               <div class="flex flex-d-column post-poll-show" style="margin:0 10px 5px 10px; padding-bottom:10px;">
+
+                    <div class="flex flex-d-column w-100per" id="pollInputContainer">
+                         <!-- POLL INPUT WILL BE SHOWN HERE -->
+
+                    </div>
+
+                    <div class="flex e-c border-radius-100per overflow-hidden m-y-10" style="background-color: #00000020; width: 40px; height:40px;" id="Add-One-More-Poll" onclick="addMorePollInput()" data-pollNum="3">
+                         <i class="fas fa-plus fs-20 cursor-pointer"></i>
+                    </div>
+               </div>
+
+               <div class="flex e-c border-radius-100per overflow-hidden m-10 pos-absolute " style="background-color: #00000020; width: 40px; height:40px; top:0; right:0;" id="Remove-Post-Photo" onclick="postRemovePoll('WritePollPost')">
+                    <i class="fas fa-times fs-20 cursor-pointer"></i>
+               </div>
+          </div>
+
+
+     </div>
+
+     <div class="flex w-100per" style="justify-content: space-between; font-size:15px;">
+          <div class="flex">
+               <div class="p-y-10 input-btn cursor-pointer" id="Photo-Uploader-Btn" onclick="triggerClick('Upload-Post-Image')">
+                    <p class="font-poppins"> <i class="fas fa-image"></i> </p>
+               </div>
+               <div class="p-y-10 input-btn cursor-pointer m-l-10" id="Rating-Create-Btn" onclick="postCreateRating('WriteRatingPost')">
+                    <p class="font-poppins"> <i class="fa fa-star" aria-hidden="true"></i> </p>
+               </div>
+               <div class="p-y-10 input-btn cursor-pointer m-l-10" id="Poll-Create-Btn" onclick="postCreatePoll('WritePollPost')">
+                    <p class="font-poppins"> <i class="fas fa-poll"></i> </p>
+               </div>
+          </div>
+          <div class="p-y-10 input-btn cursor-pointer" id="submitPost" onclick="submitPost()">
+               <p class="font-poppins"><i class="fa-solid fa-paper-plane"></i> Post </p>
+          </div>
+
+     </div>
+</form>

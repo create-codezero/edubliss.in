@@ -1,0 +1,122 @@
+@import './variables';
+
+@function btn-bg($bg-clr) {
+     @return var($bg-clr);
+}
+
+.btn {
+     display: block;
+     width: max-content;
+     padding: 13px 25px;
+     color: map-get($colors, white);
+     outline: none;
+     border-radius: $btn-radius;
+     font-weight: 400;
+     font-family: 'Poppins', sans-serif;
+     transition: 0.5s;
+     outline: none;
+     border: none;
+}
+
+.btn-profile-mode {
+
+     display: block;
+     width: max-content;
+     padding: 8px 16px;
+     color: map-get($colors, white);
+     outline: none;
+     border-radius: $btn-radius;
+     font-weight: 500;
+     font-size: 12px;
+     font-family: 'Poppins', sans-serif;
+     transition: 0.5s;
+     outline: none;
+     border: 2px solid var(--clr-7);
+
+
+     
+     transition: 0.5s;
+     background: transparent;
+     color: var(--clr-7);
+}
+
+.ad-btn {
+     display: block;
+     width: max-content;
+     padding: 13px 25px;
+     text-align: center;
+     outline: none;
+     border-radius: $btn-radius;
+     font-weight: 400;
+     font-family: 'Poppins', sans-serif;
+     transition: 0.5s;
+     outline: none;
+     border: none;
+
+     @include mobile {
+          width: 80%;
+     }
+}
+
+.download-btn {
+     display: block;
+     width: 100%;
+     text-align: center;
+     padding: 13px 25px;
+     color: map-get($colors, white);
+     // border-radius: 0 0 5px 5px;
+     font-weight: 400;
+     outline: none;
+     font-family: 'Poppins',
+          sans-serif;
+     background-color: map-get($map: $colors, $key: dark-blue);
+}
+
+// .download-btn:hover {
+//      background-color: darken(btn-bg(--clr-2), 10%);
+// }
+
+.btn.btn-primary {
+     background-color: var(--clr-2);
+}
+
+.btn.btn-dark-blue {
+     background-color: var(--clr-3);
+}
+
+.btn.btn-gra-blue {
+     transition: 0.5s;
+     background: linear-gradient(135deg,var(--btn-blue-1),var(--btn-blue-2));
+}
+
+.btn.btn-gra-purple {
+     transition-duration: 3s;
+     background: linear-gradient(135deg,var(--btn-purple-1),var(--btn-purple-2));
+}
+
+.btn.btn-gra-red {
+     transition: 0.5s;
+     background: linear-gradient(135deg,var(--btn-pink-1),var(--btn-pink-2));
+}
+
+
+.btn.btn-gra-blue:hover {
+     background: linear-gradient(135deg,var(--btn-blue-2),var(--btn-blue-1));
+}
+
+.btn.btn-gra-purple:hover {
+     transition-duration: 3s;
+     background: linear-gradient(135deg,var(--btn-purple-2),var(--btn-purple-1));
+}
+
+.btn.btn-gra-red:hover {
+     background: linear-gradient(135deg,var(--btn-pink-2),var(--btn-pink-1));
+}
+
+// .btn.btn-primary:hover {
+//      background-color: darken(var(--clr-2), 10%);
+// }
+
+// .btn.btn-dark-blue:hover {
+//      background-color: darken(var(--clr-2), 10%);
+// }

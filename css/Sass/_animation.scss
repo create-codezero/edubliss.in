@@ -1,0 +1,54 @@
+@keyframes typing {
+     0% {
+          width: 0ch;
+     }
+
+     100% {
+          width: 35ch;
+     }
+}
+
+
+@keyframes big-ballon {
+     0% {
+          border-radius: 44% 31% 61% 48% / 44% 24% 51% 50%;
+     }
+
+     25% {
+          border-radius: 44% 64% 61% 48% / 44% 61% 49% 50%;
+          // transform: scale(0.85);
+          top: 30px;
+          left: -20px;
+     }
+
+     50% {
+          border-radius: 48% 21% 61% 31% / 44% 16% 67% 50%;
+          // transform: scale(0.70);
+          top: 40px;
+          left: 50px;
+     }
+
+     75% {
+          border-radius: 45% 21% 61% 33% / 30% 16% 64% 37%;
+          // transform: scale(0.85);
+          top: 30px;
+          left: 70px;
+     }
+
+     100% {
+          border-radius: 44% 31% 61% 48% / 44% 24% 51% 50%;
+          top: 15px;
+          left: 40px;
+     }
+}
+
+
+@keyframes side-menu {
+     0% {
+          left: -300px;
+     }
+
+     100% {
+          left: 0;
+     }
+}

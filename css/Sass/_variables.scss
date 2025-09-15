@@ -1,0 +1,123 @@
+html[data-theme='light'] {
+     scroll-behavior: smooth;
+
+     --clr-1: #ffffff; // most bg
+     --clr-2: #FFAA48; // secondary bg
+     --clr-3: #00da7b;
+     --clr-4: #ededed; // secondary bg
+     --clr-5: #e7e7e7; //footer icon bg
+     --clr-6: #bbbbbb; //footer copyright
+     --clr-7: #000000; // font color
+     --clr-8: #FFAA48; // secondary font color
+     --clr-9: #f3f3f3; //side-menu bg
+     --clr-10: #fefefe; //input bg
+     --clr-11: #cccccc; // this is opposite bu not matching to primary bg
+     --clr-12: #e6e6e6; // normal progress bar bg
+     --clr-13: #89ec9b; //for question's answer bg
+
+     --white: #F9F9F9;
+     --black: #000000;
+     --primary: #FFAA48;
+     --dark-blue: #001935;
+
+     --shadow-clr: #040b1b2e;
+
+     --btn-blue-1: #FFAA48;
+     --btn-blue-2: #a54200;
+
+     --btn-pink-1: #FF00AA;
+     --btn-pink-2: #FF0000;
+
+     --btn-purple-1: #FF00AA;
+     --btn-purple-2: #4300FF;
+
+     --home-border: #ffbe74;
+
+
+}
+
+html[data-theme='dark'] {
+     scroll-behavior: smooth;
+
+     --clr-1: #040B1B; // most bg
+     --clr-2: #FFAA48; // secondary bg
+     --clr-3: #00da7b;
+     --clr-4: #001a37; //OD172D
+     --clr-5: #040914; //footer icon bg
+     --clr-6: #000000; //footer copyright
+     --clr-7: #ffffff; // font color
+     --clr-8: #FFAA48; // secondary font color
+     --clr-10: #0D172D; //input bg
+     --clr-11: #001e41; // this is opposite bu not matching to primary bg
+     --clr-12: #030713; // normal progress bar bg
+     --clr-13: #236d30; //for question's answer bg
+
+     --white: #F9F9F9;
+     --black: #000000;
+     --primary: #FFAA48;
+     --dark-blue: #001935;
+
+     --shadow-clr: #000000a0;
+
+     --btn-blue-1: #FFAA48;
+     --btn-blue-2: #a54200;
+
+     --btn-pink-1: #FF00AA;
+     --btn-pink-2: #FF0000;
+
+     --btn-purple-1: #FF00AA;
+     --btn-purple-2: #4300FF;
+
+     --home-border: #ffbe74;
+
+
+}
+
+$colors: (primary:#FFAA48,
+     white: #ffffff,
+     dark-blue : #001935,
+     light-green: #00ff73,
+     dark-white:#f3f3f3,
+     light-dark-blue: #14213d,
+     non-use:#ffffff5d,
+     black:#000000,
+     red: #ff0000);
+
+
+$btnBg: ("primary":map-get($map: $colors, $key: primary),
+     "white" : map-get($map: $colors, $key: white),
+     "dark-blue" : map-get($map: $colors, $key: dark-blue),
+     "light-dark-blue" : map-get($map: $colors, $key: light-dark-blue),
+     "dark-white" : map-get($map: $colors, $key: dark-white),
+     "light-green" : map-get($map: $colors, $key: light-green));
+
+$fontBg: ("primary":map-get($map: $colors, $key: primary),
+     "white" : map-get($map: $colors, $key: white),
+     "dark-blue" : map-get($map: $colors, $key: dark-blue),
+     "light-dark-blue" : map-get($map: $colors, $key: light-dark-blue),
+     "dark-white" : map-get($map: $colors, $key: dark-white),
+     "non-use" : map-get($map: $colors, $key: non-use),
+     "light-green" : map-get($map: $colors, $key: light-green),
+     "red" : map-get($map: $colors, $key: red));
+
+$shadowcolor: #040b1b16;
+
+
+
+$mobile : 700px;
+$tablet : 1100px;
+
+$btn-radius: 200px;
+$radius: 10px;
+
+@mixin tablet {
+     @media only screen and (max-width : $tablet) {
+          @content;
+     }
+}
+
+@mixin mobile {
+     @media only screen and (max-width : $mobile) {
+          @content;
+     }
+}
