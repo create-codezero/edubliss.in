@@ -174,7 +174,7 @@ if (mysqli_num_rows($fireFindVideo) > 0) {
         let preVid = "";
         countAView();
 
-            var key = 'AIzaSyA1mYMt3cL9sX-LQGKmez05dzoraZGYogs';
+            var key = 'your_youtube_api_key';
             var playlistId = '<?php echo $playlistId;?>';
             var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
@@ -295,4 +295,5 @@ if (mysqli_num_rows($fireFindVideo) > 0) {
                     viewCount: "<?php echo $playlistViews; ?>"
                });
           }
+
      </script>
