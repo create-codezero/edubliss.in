@@ -147,13 +147,13 @@ if (isset($_POST['sendEmails'])) {
                $mail->isSMTP();
                $mail->Host       = 'smtp.gmail.com';
                $mail->SMTPAuth   = true;
-               $mail->Username   = 'website.edubliss@gmail.com';
-               $mail->Password   = 'vbiubwzyovrmxlyt';
+               $mail->Username   = 'smtp_mail@gmail.com';
+               $mail->Password   = 'smtp_mail_password
                $mail->SMTPSecure = 'tls';
                $mail->Port       = 587;
 
                //Recipients
-               $mail->setFrom('website.edubliss@gmail.com', 'EduBliss.in');
+               $mail->setFrom('website_mail@gmail.com', 'EduBliss.in');
                while ($i < $j) {
                     $mail->addBCC($filteredSendtoArray[$i]);
                     $i++;
@@ -314,3 +314,4 @@ if (isset($_POST['sendEmails'])) {
           $timeProcessed++;
      }
 }
+
